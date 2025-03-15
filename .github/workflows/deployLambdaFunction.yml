@@ -19,7 +19,7 @@ jobs:
       - name: AWS CLI v2
         uses: imehedi/actions-awscli-v2@latest
         with:
-            args: "Lamda update-function-code \
+            args: "lambda update-function-code \
                 --function-name arn:aws:lambda:eu-west-1:386053940158:function:nutritionAiFunction \
                 --zip-file fileb://src/code.zip"
         env:

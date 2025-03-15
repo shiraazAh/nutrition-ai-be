@@ -1,0 +1,28 @@
+name: Deploy Lamda Function
+on:
+  push:
+    paths:
+      - 'src/**'
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install zip tool
+        uses: montudor/action-zip@v1
+      - name: Create zip file for lamda Function
+        run: cd src && zip -r code.zip .
+      - name: AWS CLI v2
+        uses: imehedi/actions-awscli-v2@latest
+        with:
+            args: "Lamda update-function-code \
+                --function-name arn:aws:lambda:eu-west-1:386053940158:function:nutritionAiFunction \
+                --zip-file fileb://src/code.zip"
+        env:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1

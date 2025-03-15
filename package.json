@@ -1,0 +1,19 @@
+{
+  "name": "nutrition-ai-be",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiraazAh/nutrition-ai-be.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shiraazAh/nutrition-ai-be/issues"
+  },
+  "homepage": "https://github.com/shiraazAh/nutrition-ai-be#readme",
+  "description": ""
+}
